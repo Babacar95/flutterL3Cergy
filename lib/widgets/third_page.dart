@@ -13,9 +13,9 @@ class _MyThirdPageState extends State<ThirdPage> {
 late Question question;
 
 List<Question> listeQuestions = [
-  Question("La devise de la Belgique est l'union fait la force", true, "C'est effectivement la devise", "belgique.jpg"),
-  Question("La lune va finir par tomber sur la terreà cause de la gravité", false, "", "lune.jpg"),
-  Question("Haddock est le nom du chien de Tintin", false, "Il s'agit de Milou", "tintin.jpg"),
+  Question("La devise de la Belgique est l'union fait la force", true, "L'union fait la force est la devise de la belgique depuis 1903", "belgique.jpg"),
+  Question("La lune va finir par tomber sur la terre à cause de la gravité", false, "Rien ne prouve que la gravité fasse tomber la lune", "lune.jpg"),
+  Question("Haddock est le nom du chien de Tintin", false, "C'est Milou et non Haddock le chien de Tintin", "tintin.jpg"),
 ];
 
 int index = 0;
@@ -71,8 +71,8 @@ void initState(){
 
   Future<Null> dialogue(bool b) async {
     bool bonneReponse = (b == question.reponse);
-    String vrai = "img/quizz.jpg";
-    String faux = "img/tintin.jpg";
+    String vrai = "img/succes.jpg";
+    String faux = "img/error.jpg";
     if (bonneReponse) {
       score++;
     }
