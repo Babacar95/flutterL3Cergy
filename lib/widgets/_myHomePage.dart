@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:second_windows_project/widgets/second_page.dart';
 
-import '../models/Player.dart';
+import 'package:second_windows_project/models/player.dart';
 
 class MyHomePage extends StatefulWidget {
 
@@ -33,7 +33,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
       appBar: AppBar(
         title: const Text("CodingFactory"),
-        leading: Icon(Icons.account_circle),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.account_circle),
+              onPressed: _createPlayer,
+
+            );
+          },
+        ),
         actions: [
           Icon(Icons.access_alarm),
           Icon(Icons.golf_course),
@@ -66,13 +74,13 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           )
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: (){Navigator.of(context).pushNamed(SecondPage.tag);},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-
-
   }
 }
+
